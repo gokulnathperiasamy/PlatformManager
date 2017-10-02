@@ -5,15 +5,18 @@ apply plugin: 'com.github.dcendents.android-maven'
 bintray {
     user = 'gokulnathaws'
     key = 'cd282c284ed1263fa79a8268008ebabe5c8fa06f'
+
     pkg {
-        repo = 'maven'
+        repo = 'gokulnath'
         name = 'com.gokul.platformmanager'
+        publish = true
 
         version {
-            name = '1.0'
-            desc = 'PlatformManager'
+            name = '0.0.1'
+            desc = 'platformmanager'
             released  = new Date()
-            vcsTag = '1.0'
+            vcsTag = '0.0.1'
+            attributes = ['gradle-plugin': 'com.gokul.platformmanager']
         }
 
         licenses = ['Apache-2.0']
@@ -21,30 +24,6 @@ bintray {
         websiteUrl = 'https://github.com/gokulnathperiasamy/PlatformManager'
     }
     configurations = ['archives']
-}
-
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'platformmanager'
-
-    publishedGroupId = 'com.gokul.platformmanager'
-    libraryName = 'PlatformManager'
-    artifact = 'platformmanager'
-
-    libraryDescription = 'Provides option to get the APK details which is published in Google Play Store.'
-
-    siteUrl = 'https://github.com/gokulnathperiasamy/PlatformManager'
-    gitUrl = 'https://github.com/gokulnathperiasamy/PlatformManager.git'
-
-    libraryVersion = '1.0'
-
-    developerId = 'nath-manutd'
-    developerName = 'Gokul Nath KP'
-    developerEmail = 'gokulnath.aws@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
 }
 
 android {
@@ -77,5 +56,23 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task generateJavadocsJar(type: Jar, dependsOn: generateJavadocs) {
+    from generateJavadocs.destinationDir
+    classifier 'javadoc'
+}
+
+artifacts {
+    archives generateJavadocsJar
+    archives generateSourcesJar
+    version '0.0.1'
+}
