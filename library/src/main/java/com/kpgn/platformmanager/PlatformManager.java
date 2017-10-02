@@ -1,10 +1,10 @@
 package com.kpgn.platformmanager;
 
 /**
- * <b>The core public access point to the PlatformManager library.</b>
- * <br/><br/>
- * Features:<br/>
- *  - checks if platform is BlackBerry / Android. <br/>
+ * The core public access point to the PlatformManager library.
+ *
+ * Features:
+ *  - checks if platform is BlackBerry / Android.
  *
  * @author Gokul Nath KP
  **/

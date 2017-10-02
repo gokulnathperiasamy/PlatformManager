@@ -1,4 +1,27 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+bintray {
+    user = 'gokulnathaws'
+    key = 'cd282c284ed1263fa79a8268008ebabe5c8fa06f'
+    pkg {
+        repo = 'maven'
+        name = 'com.gokul.platformmanager'
+
+        version {
+            name = '1.0'
+            desc = 'PlatformManager'
+            released  = new Date()
+            vcsTag = '1.0'
+        }
+
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/gokulnathperiasamy/PlatformManager.git'
+        websiteUrl = 'https://github.com/gokulnathperiasamy/PlatformManager'
+    }
+    configurations = ['archives']
+}
 
 ext {
     bintrayRepo = 'maven'
