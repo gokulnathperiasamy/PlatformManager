@@ -2,6 +2,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
+project.ext {
+    libVersion = '0.0.6'
+}
+
 bintray {
     user = 'gokulnathaws'
     key = 'cd282c284ed1263fa79a8268008ebabe5c8fa06f'
@@ -13,11 +17,11 @@ bintray {
         group = 'com.gokul.platformmanager'
 
         version {
-            name = '0.0.4'
-            desc = 'platformmanager'
+            name = project.ext.libVersion
+            desc = 'Checks if platform is BlackBerry / Android.'
             released  = new Date()
-            vcsTag = '0.0.4'
-            attributes = ['gradle-plugin': 'com.gokul.platformmanager:library:0.0.4']
+            vcsTag = project.ext.libVersion
+            attributes = ['gradle-plugin': 'com.gokul.platformmanager:library:' + project.ext.libVersion]
         }
 
         licenses = ['Apache-2.0']
@@ -75,5 +79,5 @@ task generateJavadocsJar(type: Jar, dependsOn: generateJavadocs) {
 artifacts {
     archives generateJavadocsJar
     archives generateSourcesJar
-    version '0.0.4'
+    version project.ext.libVersion
 }
