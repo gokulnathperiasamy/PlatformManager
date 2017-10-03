@@ -9,7 +9,7 @@
 Library is available in jcenter repository. Add below line in your ```build.gradle``` file:
 
 ```
-compile 'com.gokul.platformmanager:library:0.0.8'
+compile 'com.gokul.platformmanager:library:0.0.9'
 ```
 
 ###### Maven Dependency
