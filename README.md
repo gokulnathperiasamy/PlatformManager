@@ -1,4 +1,4 @@
-# PlatformManager [ ![Download](https://api.bintray.com/packages/gokulnathaws/gokulnath/com.gokul.platformmanager/images/download.svg) ](https://bintray.com/gokulnathaws/gokulnath/com.gokul.platformmanager/_latestVersion)  ![TravisCI](https://travis-ci.org/gokulnathperiasamy/PlatformManager.svg?branch=master)
+# PlatformManager [ ![Download](https://api.bintray.com/packages/gokulnathaws/gokulnath/com.gokul.platformmanager/images/download.svg) ](https://bintray.com/gokulnathaws/gokulnath/com.gokul.platformmanager/_latestVersion) [ ![TravisCI](https://travis-ci.org/gokulnathperiasamy/PlatformManager.svg?branch=master) ](https://travis-ci.org/gokulnathperiasamy/PlatformManager)
 
 > A library project to checks if platform is BlackBerry / Android.
 
