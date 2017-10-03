@@ -20,4 +20,4 @@ android:
     - extra-google-android-support
 
 script:
-   - ./gradlew clean install bintrayUpload
+    - ./gradlew clean # install bintrayUpload - add for updating to Bintray.
