@@ -26,7 +26,7 @@ compile 'com.gokul.platformmanager:library:0.0.9'
 ###### Ivy Dependency
 
 ```
-<dependency org='com.gokul.platformmanager' name='library' rev='0.0.8'>
+<dependency org='com.gokul.platformmanager' name='library' rev='0.0.9'>
   <artifact name='library' ext='pom' ></artifact>
 </dependency>
 ```
