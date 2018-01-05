@@ -61,11 +61,11 @@ private void checkPlatformAndUpdate() {
 }
 ```
 
-### Author
+#### Author
 
 - Gokul Nath KP
 
-### Contribution Guidelines
+#### Contribution Guidelines
 
 Contributions are always welcome! Please read below guideline before contributing.
 
@@ -77,7 +77,7 @@ Please ensure your pull request adheres to the following guidelines:
 
 Thank you for your suggestions!
 
-### License
+#### License
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
